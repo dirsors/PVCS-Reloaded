@@ -1,0 +1,33 @@
+
+OBJS = cpu.o display.o files.o keyboard.o \
+	md5.o memory.o main.o misc.o mouse.o \
+	tiasound.o tia.o table.o vmachine.o xdebug.o
+
+LIBS        = -lc -lcurses -lSDL
+
+RM          = /bin/rm -f
+
+CFLAGS      = -g -O2 -Wall -c -DWINDOWS -DVERBOSE -DSTELLA_TIA
+CXXFLAGS    = -O2 -Wall -Wa,-al -fno-exceptions -fno-common
+LDFLAGS     = -L/usr/lib -L/usr/local/lib -L.
+
+LIBDIR      =
+INCLUDES    = -I/usr/local/include/SDL -I.
+
+.SUFFIXES: .c .s .cc .dsm
+
+all: vcs.exe
+
+vcs.exe: $(OBJS)
+	$(CC) -g -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
+#	$(LD) -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
+#	ee-strip -F elf32-littlemips vcs.elf
+
+crt0.o:
+	$(AS) $(CFLAGS) crt0.s -o $@ > $*.lst
+
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $*.o > $*.lst
+clean:
+	rm -f *.exe *.o *.a
+

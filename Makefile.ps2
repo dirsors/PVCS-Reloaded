@@ -1,0 +1,38 @@
+
+LIBCDVD = $(PS2DEV)/libcdvd/lib
+LIBG2 = $(PS2DEV)/virtualvcs/libg2
+
+EE_OBJS = cpu.o display.o display_ps2.o files.o \
+	keyboard.o memory.o md5.o main.o menu.o misc.o mouse.o \
+	cdvd.o sjpcm.o sjpcm_rpc.o table.o tia.o tiasound.o \
+	vmachine.o courier_new.o fixed_tc.o fixed_tc8.o small_font.o
+
+EE_LIBS        = -lmc -lcdvdfs -lpad -lg2 -lc
+
+#EE_CFLAGS   = -DVERBOSE -DSTELLA_TIA -DPS2_EE -DLSB_FIRST -DALIGN_DWORD -mips3 -ffreestanding -fno-builtin -fshort-double -nostartfiles -mlong64 -I$(LIBG2)
+EE_CFLAGS   = -DVERBOSE -DSTELLA_TIA -DPS2_EE -I$(LIBG2)
+EE_LDFLAGS     = -L$(LIBCDVD) -L$(LIBG2)
+
+
+.SUFFIXES: .c .s .cc .dsm
+
+EE_BIN = pvcs.elf
+
+all: build-libg2 $(EE_BIN)
+
+build-libg2:
+	@echo Building libg2
+	$(MAKE) -C libg2
+
+cdvd.s:
+	bin2s cdvd.irx cdvd.s cdvd_irx
+
+sjpcm.s:
+	bin2s sjpcm.irx sjpcm.s sjpcm_irx
+
+clean:
+	$(MAKE) -C libg2 clean
+	rm -f *.elf *.o *.a
+
+include $(PS2SDK)/samples/Makefile.pref
+include $(PS2SDK)/samples/Makefile.eeglobal

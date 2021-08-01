@@ -1,0 +1,30 @@
+PVCS - Reloaded 
+by: bootsector (bootsector@ig.com.br)
+http://www.brunofreitas.com/
+-------------------------------------
+
+PVCS Reloaded attempts to bring PVCS 1.3 (Atari 2600 emulator by BraveDog) back to life! It now
+supports following devices:
+
+:. Memory Card
+:. USB Devices
+:. CD/DVD
+:. HDD
+
+This version was converted to PS2SDK/GsKit by bootsector.
+
+Thanks to the following people who (in)directly made this happen:
+
+:. PS2SDK maintainers/developers
+:. PS2DEV forum members (Lukasz and others)
+:. ragnarok2040 for his menu component (used in FCEUltra for PS2)
+:. dlanor and EP for LaunchElf and its source code
+:. BraveDog for PVCS.
+:. My lovely wife, Miriam, for letting me to spend some of our 
+   valuable time with this ;)
+   
+This is a WIP project. There are still many features to be added!
+
+Hope you folks enjoy it!
+
+bootsector
