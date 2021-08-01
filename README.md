@@ -1,5 +1,7 @@
 # pvcs
- 	
+
+From Bruno Freitas - http://www.brunofreitas.com/node/26
+
 PVCS Reloaded - Atari 2600 emulator for PS2
 
 PVCS Reloaded attempts to bring PVCS 1.3 (Atari 2600 emulator by BraveDog) back to life! It now
@@ -19,6 +21,8 @@ Thanks to the following people who (in)directly made this happen:
 :. ragnarok2040 for his menu component (used in FCEUltra for PS2)
 :. dlanor and EP for LaunchElf and its source code
 :. BraveDog for PVCS.
+
+This is a WIP project. There are still many features to be added!
 
 Hope you folks enjoy it!
 
