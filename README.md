@@ -1,8 +1,4 @@
-# pvcs
-
-From Bruno Freitas - http://www.brunofreitas.com/node/26
-
-PVCS Reloaded - Atari 2600 emulator for PS2
+# PVCS Reloaded - Atari 2600 emulator for PS2
 
 PVCS Reloaded attempts to bring PVCS 1.3 (Atari 2600 emulator by BraveDog) back to life! It now
 supports following devices:
@@ -26,4 +22,4 @@ This is a WIP project. There are still many features to be added!
 
 Hope you folks enjoy it!
 
-Bruno
+Bruno Freitas - http://www.brunofreitas.com/node/26
